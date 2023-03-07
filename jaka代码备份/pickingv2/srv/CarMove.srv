@@ -1,0 +1,6 @@
+# "forward" | "backward"
+string cmd
+float64 distance
+---
+bool success
+string desc

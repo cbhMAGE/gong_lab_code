@@ -1,0 +1,7 @@
+sensor_msgs/Image img
+---
+bool success
+geometry_msgs/Pose2D[] poses2d
+float64[] maturities
+string desc
+sensor_msgs/Image result_img

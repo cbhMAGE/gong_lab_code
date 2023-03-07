@@ -1,0 +1,6 @@
+moveit_msgs/RobotTrajectory trajectory
+float64 sample_duration
+---
+bool success
+string desc
+moveit_msgs/RobotTrajectory trajectory

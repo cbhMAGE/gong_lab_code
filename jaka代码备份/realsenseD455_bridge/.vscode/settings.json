@@ -1,0 +1,28 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/msi/1008_catkin_ws/devel_isolated/qjaka_gui/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/pickingv2_flexbe_states/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/pickingv2_flexbe_behaviors/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/pickingv2/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/learning_topic/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/flexbe_utility_states/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/flexbe_navigation_states/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/flexbe_manipulation_states/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/astra_camera/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/msi/1008_catkin_ws/devel_isolated/qjaka_gui/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/pickingv2_flexbe_states/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/pickingv2_flexbe_behaviors/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/pickingv2/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/learning_topic/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/flexbe_utility_states/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/flexbe_navigation_states/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/flexbe_manipulation_states/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel_isolated/astra_camera/lib/python3/dist-packages",
+        "/home/msi/1008_catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
+}

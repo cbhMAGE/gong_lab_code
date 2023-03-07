@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding='utf-8'?>
+<robot name="dual" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <material name="white">
+        <color rgba="0.6 1 1 1"/>
+    </material>
+
+    <xacro:include filename="$(find zu7)/urdf/jaka_macro.xacro" ns="left"/>
+    <xacro:left.jaka_robot prefix="left_"/>
+
+    <xacro:include filename="$(find jaka_zu7_v2)/urdf/jaka_zu7_v2.xacro" ns="right"/>
+    <xacro:right.jaka_robot prefix="right_"/>
+
+
+    <joint name="left_to_right" type="fixed">
+        <parent link="right_base_link"/>
+        <child link="left_base_link"/>
+        <origin xyz="0.48622462  0.0084934  -0.00136687"
+                rpy="-0.015272913100903103 0.01866994910995618 0.02274242853030429"/>
+    </joint>
+
+    <link name="right_gripper_base_link">
+        <visual>
+            <geometry>
+                <!--                <cylinder radius="0.05" length="0.18"/>-->
+                <!--                <mesh filename="package://picking/meshes/gripper-cylinder-50.STL"/>-->
+                <mesh filename="package://picking/meshes/gripper-raw.STL"/>
+            </geometry>
+            <material name="gripper_color"/>
+            <!--            <origin xyz="0 0 0.09"/>-->
+            <!--            <origin xyz="0 0 0.0" rpy="${-pi/2} 0 0"/>-->
+        </visual>
+        <collision>
+            <geometry>
+                <!--                <cylinder radius="0.05" length="0.18"/>-->
+                <!--                <mesh filename="package://picking/meshes/gripper-cylinder-50.STL"/>-->
+                <mesh filename="package://picking/meshes/gripper-raw.STL"/>
+            </geometry>
+            <!--            <origin xyz="0 0 0.09"/>-->
+            <!--            <origin xyz="0 0 0.0" rpy="${-pi/2} 0 0"/>-->
+        </collision>
+    </link>
+    <joint name="right_ee_joint" type="fixed">
+        <parent link="right_link_6"/>
+        <child link="right_gripper_base_link"/>
+        <origin xyz="0 0 0.039" rpy="0 0 0"/>
+    </joint>
+
+
+    <link name="left_gripper_base_link">
+        <visual>
+            <geometry>
+                <!--                <cylinder radius="0.05" length="0.18"/>-->
+                <!--                <mesh filename="package://picking/meshes/gripper-cylinder-50.STL"/>-->
+                <mesh filename="package://picking/meshes/gripper-raw.STL"/>
+            </geometry>
+            <material name="gripper_color"/>
+            <!--            <origin xyz="0 0 0" rpy="${-pi/2} 0 0"/>-->
+            <!--            <origin xyz="0 0 0.08"/>-->
+        </visual>
+        <collision>
+            <geometry>
+                <!--                <cylinder radius="0.05" length="0.18"/>-->
+                <!--                <mesh filename="package://picking/meshes/gripper-cylinder-50.STL"/>-->
+                <mesh filename="package://picking/meshes/gripper-raw.STL"/>
+            </geometry>
+            <!--            <origin xyz="0 0 0.08"/>-->
+            <!--            <origin xyz="0 0 0" rpy="${-pi/2} 0 0"/>-->
+
+        </collision>
+    </link>
+    <joint name="left_ee_joint" type="fixed">
+        <parent link="left_link_6"/>
+        <child link="left_gripper_base_link"/>
+        <origin xyz="0 0 0.0355" rpy="0 0 0"/>
+    </joint>
+
+    <xacro:property name="platform_x" value="1.2"/>
+    <xacro:property name="platform_y" value="0.6"/>
+    <xacro:property name="platform_z" value="0.6"/>
+    <xacro:property name="wall_height" value="1.2"/>
+    <xacro:property name="wall_thick" value="0.02"/>
+
+    <xacro:property name="cam_x" value="0.24"/>
+    <xacro:property name="cam_y" value="0.25"/>
+    <xacro:property name="cam_z" value="0.2"/>
+
+    <xacro:property name="place_box_x" value="${platform_x}"/>
+    <xacro:property name="place_box_y" value="0.3"/>
+    <xacro:property name="place_box_z" value="0.2"/>
+
+    <xacro:property name="right_box_offset" value="0.4"/>
+
+
+    <material name="platform_color">
+        <color rgba="1 0.6 0 1.0"/>
+    </material>
+    <material name="wall_color">
+        <color rgba="1.0 0.5 0.5 0.0"/>
+    </material>
+    <material name="cam_color">
+        <color rgba="0.8 0.4 0.4 0.8"/>
+    </material>
+    <material name="place_box_color">
+        <color rgba="0.2 0.6 0.4 1.0"/>
+    </material>
+    <material name="gripper_color">
+        <color rgba="0.2 0.6 0.8 0.75"/>
+    </material>
+
+    <link name="platform">
+        <visual>
+            <geometry>
+                <box size="${platform_x} ${platform_y} ${platform_z}"/>
+            </geometry>
+            <material name="platform_color"/>
+            <origin xyz="${platform_x/2} ${platform_y/2} ${-platform_z/2}"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="${platform_x} ${platform_y} ${platform_z}"/>
+            </geometry>
+            <origin xyz="${platform_x/2} ${platform_y/2} ${-platform_z/2}"/>
+        </collision>
+    </link>
+    <joint name="right_to_platform" type="fixed">
+        <parent link="platform"/>
+        <child link="right_base_link"/>
+        <origin xyz="0.2 0.4 0"/>
+    </joint>
+
+    <link name="background_wall">
+        <visual>
+            <geometry>
+                <box size="${platform_x+right_box_offset} ${wall_thick} ${wall_height}"/>
+            </geometry>
+            <material name="wall_color"/>
+            <origin xyz="${platform_x/2-right_box_offset/2} ${wall_thick/2} ${wall_height/2}"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="${platform_x+right_box_offset} ${wall_thick} ${wall_height}"/>
+            </geometry>
+            <origin xyz="${platform_x/2-right_box_offset/2} ${wall_thick/2} ${wall_height/2}"/>
+        </collision>
+    </link>
+    <joint name="background_wall_to_platform" type="fixed">
+        <parent link="platform"/>
+        <child link="background_wall"/>
+        <origin xyz="0 ${platform_y - wall_thick+0.5} 0"/>
+    </joint>
+
+    <link name="camera_box">
+        <visual>
+            <geometry>
+                <box size="${cam_x} ${cam_y} ${cam_z}"/>
+            </geometry>
+            <material name="cam_color"/>
+            <origin xyz="${cam_x/2} ${cam_y/2} ${cam_z/2}"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="${cam_x} ${cam_y} ${cam_z}"/>
+            </geometry>
+            <origin xyz="${cam_x/2} ${cam_y/2} ${cam_z/2}"/>
+        </collision>
+    </link>
+    <joint name="camera_box_to_platform" type="fixed">
+        <parent link="platform"/>
+        <child link="camera_box"/>
+        <origin xyz="0.29 0.24 0"/>
+    </joint>
+
+    <link name="place_box">
+        <visual>
+            <geometry>
+                <box size="${place_box_x} ${place_box_y} ${place_box_z}"/>
+            </geometry>
+            <material name="place_box_color"/>
+            <origin xyz="${place_box_x/2} ${-place_box_y/2} ${-place_box_z/2}"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="${place_box_x} ${place_box_y} ${place_box_z}"/>
+            </geometry>
+            <origin xyz="${place_box_x/2} ${-place_box_y/2} ${-place_box_z/2}"/>
+        </collision>
+    </link>
+    <joint name="place_box_to_platform" type="fixed">
+        <parent link="platform"/>
+        <child link="place_box"/>
+        <origin xyz="0 0 0"/>
+    </joint>
+
+    <link name="left_box">
+        <visual>
+            <geometry>
+                <box size="0.04 ${platform_y+place_box_y} ${wall_height+platform_z}"/>
+            </geometry>
+            <material name="wall_color"/>
+            <origin xyz="0.02 ${(place_box_y-platform_y)/2} ${(wall_height-platform_z)/2}"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.04 ${platform_y+place_box_y} ${wall_height+platform_z}"/>
+            </geometry>
+            <origin xyz="0.02 ${(place_box_y-platform_y)/2} ${(wall_height-platform_z)/2}"/>
+        </collision>
+    </link>
+    <joint name="left_box_to_platform" type="fixed">
+        <parent link="platform"/>
+        <child link="left_box"/>
+        <origin xyz="${platform_x} 0 0"/>
+    </joint>
+    <link name="right_box">
+        <visual>
+            <geometry>
+                <box size="0.04 ${platform_y+place_box_y} ${wall_height+platform_z}"/>
+            </geometry>
+            <material name="wall_color"/>
+            <origin xyz="-0.02 ${(place_box_y-platform_y)/2} ${(wall_height-platform_z)/2}"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.04 ${platform_y+place_box_y} ${wall_height+platform_z}"/>
+            </geometry>
+            <origin xyz="-0.02 ${(place_box_y-platform_y)/2} ${(wall_height-platform_z)/2}"/>
+        </collision>
+    </link>
+
+    <joint name="right_box_to_platform" type="fixed">
+        <parent link="platform"/>
+        <child link="right_box"/>
+        <origin xyz="${-right_box_offset} 0 0"/>
+    </joint>
+
+    <link name="qi_box">
+        <visual>
+            <geometry>
+                <box size="0.25 ${platform_y} 0.2"/>
+            </geometry>
+            <material name="place_box_color"/>
+            <origin xyz="0.125 ${platform_y/2} -0.10"/>
+        </visual>
+    </link>
+    <joint name="qi_box_to_platform" type="fixed">
+        <parent link="platform"/>
+        <child link="qi_box"/>
+        <origin xyz="${platform_x-0.25} 0 0.2"/>
+    </joint>
+
+    <!--    <link name="lr_wall">-->
+    <!--        <visual>-->
+    <!--            <geometry>-->
+    <!--                <box size="0.005 2.0 1.0"/>-->
+    <!--            </geometry>-->
+    <!--            <material name="wall_color"/>-->
+    <!--            <origin xyz="0 1 0.5"/>-->
+    <!--        </visual>-->
+    <!--        <collision>-->
+    <!--            <geometry>-->
+    <!--                <box size="0.005 2.0 1.0"/>-->
+    <!--            </geometry>-->
+    <!--            <origin xyz="0 1 0.5"/>-->
+    <!--        </collision>-->
+    <!--    </link>-->
+    <!--    <link name="picking_wall">-->
+    <!--        <visual>-->
+    <!--            <geometry>-->
+    <!--                <box size="3.0 0.005 1.0"/>-->
+    <!--            </geometry>-->
+    <!--            <material name="wall_color"/>-->
+    <!--            <origin xyz="0 -0.0025 0.5"/>-->
+    <!--        </visual>-->
+    <!--        <collision>-->
+    <!--            <geometry>-->
+    <!--                <box size="3.0 0.005 1.0"/>-->
+    <!--            </geometry>-->
+    <!--            <origin xyz="0 -0.0025 0.5"/>-->
+    <!--        </collision>-->
+    <!--    </link>-->
+    <!--    <joint name="lr_wall_to_picking_wall" type="fixed">-->
+    <!--        <parent link="platform"/>-->
+    <!--        <child link="lr_wall"/>-->
+    <!--        <origin xyz="0.40 -1.5 10"/>-->
+    <!--    </joint>-->
+    <!--    <joint name="picking_wall_to_platform" type="prismatic">-->
+    <!--        <parent link="platform"/>-->
+    <!--        <child link="picking_wall"/>-->
+    <!--        <origin xyz="0.5 -0.0 0"/>-->
+    <!--        <axis xyz="0 1 0"/>-->
+    <!--        <limit lower="-5.0" upper="0.0" effort="0" velocity="1.0"/>-->
+    <!--    </joint>-->
+</robot>

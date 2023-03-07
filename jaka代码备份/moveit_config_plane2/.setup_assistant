@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: pickingNS
+    relative_path: urdf/plane.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/plane.srdf
+  CONFIG:
+    author_name: Zhiyu YANG
+    author_email: zhiyu_yang@sjtu.edu.cn
+    generated_timestamp: 1640127782

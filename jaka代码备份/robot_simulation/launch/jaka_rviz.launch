@@ -1,0 +1,19 @@
+<launch>
+	<arg name="model" default="$(find xacro)/xacro --inorder '$(find fzjd)/urdf/jaka_rviz.xacro'" />
+	<param name="robot_description" command="$(arg model)" />
+
+	<!-- 下面的代码是通过gui插件来手动控制机械臂关节角，如果想通过发布话题来控制机械臂关节角就要注释下面的代码，使topic的信息只来自一个publisher，如果想gui控制的话，就解除注释 -->
+	<!-- <arg name="gui" default="true" /> -->
+    <!-- 设置GUI参数，显示关节控制插件 -->
+	<!-- <param name="use_gui" value="$(arg gui)"/> -->
+    <!-- 运行joint_state_publisher节点，发布机器人的关节状态  -->
+	<!-- <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" /> -->
+	<!-- 到这里 -->
+
+	<!-- 运行robot_state_publisher节点，发布tf  -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+    <!-- 运行rviz可视化界面 -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find fzjd)/config/jaka.rviz" required="true" />
+
+</launch>

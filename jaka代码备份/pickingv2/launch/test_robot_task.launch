@@ -1,0 +1,60 @@
+<launch>
+
+    <include file="$(find pickingv2)/launch/cam_to_right.launch"/>
+    <include file="$(find pickingv2)/launch/RealsenseD455_to_right.launch"/>
+
+    <!-- 机械臂 begin ++++++++++++++++++++++++++++++++++++++++++++ -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find pickingv2)/urdf/jaka_dual.xacro"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find pickingv2)/config/test_robot_task.rviz" required="true"
+          output="screen"/>
+    <!--    qjaka_gui and 发布tf-->
+    <node pkg="qjaka_gui" type="qjaka_gui" name="qjaka_gui" output="screen" respawn="false" respawn_delay="0.5">
+        <param name="left_ip" value="192.168.0.132"/>
+        <param name="right_ip" value="192.168.0.130"/>
+    </node>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <rosparam param="source_list">[/jaka_joint_states, /fake_jaka_joint_states]</rosparam>
+    </node>
+    <!--    <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui">-->
+    <!--        <rosparam param="source_list">[move_group/fake_controller_joint_states]</rosparam>-->
+    <!--    </node>-->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true"
+          output="screen"/>
+    <!-- 机械臂 end ++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+    <!-- moveit begin ++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- By default, we are not in debug mode -->
+    <arg name="debug" default="false"/>
+    <!-- By default, we will load or override the robot_description -->
+    <arg name="load_robot_description" default="true"/>
+    <!-- specify the palanning pipeline -->
+    <arg name="pipeline" default="ompl"/>
+    <!-- Set execution mode for fake execution controllers -->
+    <arg name="execution_type" default="via points"/>
+
+    <!-- moveit -->
+    <include file="$(find dual_moveit_config)/launch/move_group.launch">
+        <arg name="allow_trajectory_execution" value="true"/>
+        <arg name="fake_execution" value="true"/>
+        <arg name="execution_type" value="$(arg execution_type)"/>
+        <arg name="info" value="true"/>
+        <arg name="debug" value="$(arg debug)"/>
+        <arg name="pipeline" value="$(arg pipeline)"/>
+        <arg name="load_robot_description" value="$(arg load_robot_description)"/>
+    </include>
+
+    <!-- moveit 点云 -->
+    <!--<include ns="move_group" file="$(find left_moveit_config)/launch/sensor_manager.launch.xml">
+          <arg name="moveit_sensor_manager" value="arm"/>
+        </include>-->
+    <!-- moveit end ++++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+        <arg name="port" value="9090"/>
+    </include>
+    <node pkg="tf2_web_republisher" type="tf2_web_republisher" name="tf2_web_republisher"/>
+    <node pkg="pickingv2" type="uniform_sample_filter" name="uniform_sample_filter"/>
+
+    <node pkg="detection" type="exec_cv.py" name="exec_cv"/>
+</launch>

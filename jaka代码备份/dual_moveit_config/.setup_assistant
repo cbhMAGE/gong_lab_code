@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: picking
+    relative_path: urdf/jaka_dual.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/dual.srdf
+  CONFIG:
+    author_name: Zhiyu YANG
+    author_email: zhiyu_yang@sjtu.edu.cn
+    generated_timestamp: 1634216540

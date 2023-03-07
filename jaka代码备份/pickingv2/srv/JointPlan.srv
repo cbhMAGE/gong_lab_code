@@ -1,0 +1,9 @@
+string move_group_name
+string[] joint_names
+float64[] start_joint_config
+float64[] target_joint_config
+float64[] collision_distance
+---
+bool success
+string desc
+moveit_msgs/RobotTrajectory trajectory

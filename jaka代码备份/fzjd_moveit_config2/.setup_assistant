@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: fzjd
+    relative_path: urdf/jaka_gazebo.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/dual.srdf
+  CONFIG:
+    author_name: yuchenrui
+    author_email: yuchenrui@sjtu.edu.cn
+    generated_timestamp: 1657729438
