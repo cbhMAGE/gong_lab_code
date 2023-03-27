@@ -1,9 +1,29 @@
 # gong_lab_code
 
-用于存储实验室相关代码。
+This document stores the relevant code of the lab.
+
+Mainly divided into the following three parts.
+
+- Autonomous picking
+- Natural teaching
+- Reinforcement learning
 
 
 
-# jaka代码备份
+## Autonomous picking
 
-该文件夹中存储jaka臂采摘机器人代码.
+This document mainly contains the code for autonomous planning and grasping using the JAKA robotic arm.
+
+> Last Modified: 2023/3/27
+
+
+
+## Natural teaching
+
+Waiting for the code to upload.
+
+
+
+## Reinforcement learning
+
+Waiting for the code to upload.

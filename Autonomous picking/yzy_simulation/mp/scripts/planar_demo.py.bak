@@ -1,0 +1,110 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+"""
+@author:yzy
+@file:planar_demo.py
+@time:2021/12/05
+"""
+import time
+import roslibpy
+import logging
+import numpy as np
+from typing import Dict, List, Tuple
+from planner.tools import Timer
+
+from planner.base import Space, State
+from planner.prm import PRM
+from planner.stp import STP, Decomposition
+
+logging.basicConfig(level=logging.INFO)
+
+
+class PlanarSpace(Space):
+    def __init__(self, lower_bound, upper_bound):
+        super().__init__(lower_bound, upper_bound, check_motion_resolution=np.deg2rad(10))
+
+        self.ros_client = roslibpy.Ros(host='localhost', port=9090)
+        self.ros_client.run()
+        self.check_validity_srv = roslibpy.Service(self.ros_client, '/check_state_validity', 'moveit_msgs/GetStateValidity')
+
+        self.planned_path_pub = roslibpy.Topic(self.ros_client, '/move_group/display_planned_path',
+                                               'moveit_msgs/DisplayTrajectory')
+
+    def check_validity(self, s: State) -> bool:
+        # t = Timer("check_validity")
+        req = roslibpy.ServiceRequest({
+            'group_name': 'arm',
+            'robot_state': {
+                'joint_state': {
+                    'name': ['joint_1', 'joint_2', 'joint_3'],
+                    'position': s.to_list()
+                }
+            }
+        })
+        resp = self.check_validity_srv.call(req)
+        return resp['valid']
+
+    def __del__(self):
+        self.ros_client.terminate()
+        self.ros_client.close()
+
+    def pub_path(self, states: List[State]):
+        pts = []
+        epoch_time = 3  # s
+        start_time = 0
+        add_num = 10
+        for idx in range(1, len(states)):
+            for t, positions in zip(np.linspace(start_time, start_time + epoch_time, add_num),
+                                    np.linspace(states[idx - 1].data_view, states[idx].data_view, add_num)):
+                pts.append({
+                    'positions': positions.tolist(),
+                    'time_from_start': {'secs': int(t), 'nsecs': int(1e9 * (t - int(t)))}
+                })
+            start_time += epoch_time
+
+        msg = roslibpy.Message({
+            'trajectory': [{
+                'joint_trajectory': {
+                    'joint_names': ['joint_1', 'joint_2', 'joint_3'],
+                    'points': pts
+                }
+            }],
+            'trajectory_start': {
+                'joint_state': {
+                    'name': ['joint_1', 'joint_2', 'joint_3'],
+                    'position': states[0].to_list()
+                }
+            }
+        })
+        self.planned_path_pub.publish(msg)
+
+
+class PlanarDecomposition(Decomposition):
+    def __init__(self, workspace_: Space, slices_: Tuple):
+        super().__init__(workspace_, slices_)
+
+    def ik(self, workspace_s: State) -> List[State]:
+        pass
+
+    def fk(self, s: State) -> State:
+        pass
+
+
+space = PlanarSpace(
+    np.deg2rad([-180, -180, -180]),
+    np.deg2rad([180, 180, 180]),
+)
+
+start_state = State(np.deg2rad([0, 0, 0]))
+goal_state = State(np.deg2rad([-90, 0, 0]))
+
+# +++ test prm ++++++++++++++++++++++++++++++++++++++++++++
+prm = PRM(space_=space)
+sols = prm.solve(start_state, goal_state)
+print(sols)
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+space.pub_path(sols)
+while True:
+    space.pub_path(sols)
+    time.sleep(1)

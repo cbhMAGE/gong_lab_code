@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+# generated from catkin/python/catkin/environment_cache.py
+
+# based on a snapshot of the environment before and after calling the setup script
+# it emulates the modifications of the setup script without recurring computations
+
+# new environment variables
+
+# modified environment variables
+export CMAKE_PREFIX_PATH="/home/msi/1008_catkin_ws/src/learning_topic/cmake-build-debug/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/msi/1008_catkin_ws/src/learning_topic/cmake-build-debug/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/msi/1008_catkin_ws/src/learning_topic/cmake-build-debug/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PYTHONPATH="/home/msi/1008_catkin_ws/src/learning_topic/cmake-build-debug/devel/lib/python3/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/msi/1008_catkin_ws/src/learning_topic/cmake-build-debug/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH='/home/msi/1008_catkin_ws/src/learning_topic:/home/msi/1008_catkin_ws/src/ros_astra_camera:/home/msi/1008_catkin_ws/src/chassis_simulation:/home/msi/1008_catkin_ws/src/detection:/home/msi/1008_catkin_ws/src/dual_moveit_config:/home/msi/1008_catkin_ws/src/flexbe_app:/home/msi/1008_catkin_ws/src/generic_flexbe_states/flexbe_manipulation_states:/home/msi/1008_catkin_ws/src/generic_flexbe_states/flexbe_navigation_states:/home/msi/1008_catkin_ws/src/generic_flexbe_states/flexbe_utility_states:/home/msi/1008_catkin_ws/src/fzjd:/home/msi/1008_catkin_ws/src/fzjd_moveit_config:/home/msi/1008_catkin_ws/src/fzjd_moveit_config2:/home/msi/1008_catkin_ws/src/iai_kinect2/iai_kinect2:/home/msi/1008_catkin_ws/src/jaka_zu7_v2:/home/msi/1008_catkin_ws/src/iai_kinect2/kinect2_registration:/home/msi/1008_catkin_ws/src/iai_kinect2/kinect2_bridge:/home/msi/1008_catkin_ws/src/iai_kinect2/kinect2_calibration:/home/msi/1008_catkin_ws/src/iai_kinect2/kinect2_viewer:/home/msi/1008_catkin_ws/src/learning_topic:/home/msi/1008_catkin_ws/src/mbot_gazebo/mbot_description:/home/msi/1008_catkin_ws/src/mbot_gazebo/mbot_gazebo:/home/msi/1008_catkin_ws/src/mbot_gazebo/mbot_teleop:/home/msi/1008_catkin_ws/src/moveit_calibration/moveit_calibration_plugins:/home/msi/1008_catkin_ws/src/moveit_calibration/moveit_calibration_gui:/home/msi/1008_catkin_ws/src/moveit_config_plane:/home/msi/1008_catkin_ws/src/moveit_config_plane2:/home/msi/1008_catkin_ws/src/picking:/home/msi/1008_catkin_ws/src/pickingv2:/home/msi/1008_catkin_ws/src/pickingv2_behaviors/pickingv2_flexbe_behaviors:/home/msi/1008_catkin_ws/src/pickingv2_behaviors/pickingv2_flexbe_states:/home/msi/1008_catkin_ws/src/pickingv3:/home/msi/1008_catkin_ws/src/qjaka_gui:/home/msi/1008_catkin_ws/src/robot_simulation:/home/msi/1008_catkin_ws/src/single_moveit_config:/home/msi/1008_catkin_ws/src/zu7:/opt/ros/noetic/share'

@@ -1,0 +1,16 @@
+
+ros_enable
+pycharm
+
+ros_enable
+roslaunch kinect2_bridge kinect2_bridge.launch publish_tf:=true
+
+cd ~/Documents/iWork/picking-app/picking-web
+npm run start
+
+cd ~/1008_catkin_ws/src
+python3 ./file-servre.py 8875
+
+ros_enable
+roslaunch pickingv2 test_robot_task.launch
+

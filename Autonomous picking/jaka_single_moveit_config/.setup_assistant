@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: mpv2
+    relative_path: urdf/jaka_single.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/jaka_single.srdf
+  CONFIG:
+    author_name: Zhiyu YANG
+    author_email: zhiyu_yang@sjtu.edu.cn
+    generated_timestamp: 1651556497

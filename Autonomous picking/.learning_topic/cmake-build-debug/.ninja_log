@@ -1,0 +1,17 @@
+# ninja log v5
+1420	1496	1660619482939093615	devel/lib/learning_topic/velocity_publisher	90c10bd6eb8922a8
+1482	1558	1662906878193528496	devel/lib/learning_topic/server	37081ea0c80495d8
+0	244	1659320045134599470	CMakeFiles/txt.dir/src/txt.cpp.o	790a324456970ab1
+244	283	1659320045174599903	devel/lib/learning_topic/txt	5a5db69311bef151
+1497	1582	1662813848773551140	devel/lib/learning_topic/server_car	8faafb1182a3953b
+1	1481	1662906878117528939	CMakeFiles/server.dir/src/server.cpp.o	c5ded3682dc598ac
+1	1497	1662813848689551477	CMakeFiles/server_car.dir/src/server_car.cpp.o	86b4cce8e829fad3
+2	1467	1662883352028818064	CMakeFiles/joint_state_publisher.dir/src/joint_state_publisher.cpp.o	575cde483a0095f3
+2	1605	1660619341931391836	CMakeFiles/joint_state_publisher2.dir/src/joint_state_publisher2.cpp.o	a48f6ca33f8f2b1b
+1605	1713	1660619342039391625	devel/lib/learning_topic/joint_state_publisher2	763df875a0c2013
+1467	1545	1662883352104817039	devel/lib/learning_topic/joint_state_publisher	111cae6926ef249
+2	1420	1660619482859093787	CMakeFiles/velocity_publisher.dir/src/velocity_publisher.cpp.o	2869aba808de1e8
+0	31	1662907566794642791	CMakeFiles/server2.dir/src/server2.cpp.o	26c5d32c4ed61a6d
+31	55	1662907566822640618	devel/lib/learning_topic/server2	570a8be75bbae997
+0	30	1662907574970012077	CMakeFiles/server2.dir/src/server2.cpp.o	26c5d32c4ed61a6d
+30	55	1662907574998009926	devel/lib/learning_topic/server2	570a8be75bbae997

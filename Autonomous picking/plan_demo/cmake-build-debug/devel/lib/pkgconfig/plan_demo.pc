@@ -1,0 +1,8 @@
+prefix=/home/msi/0120_catkin_ws/src/plan_demo/cmake-build-debug/devel
+
+Name: plan_demo
+Description: Description of plan_demo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

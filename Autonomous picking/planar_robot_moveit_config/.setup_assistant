@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: planar_robot
+    relative_path: urdf/planar_robot.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/planar_robot.srdf
+  CONFIG:
+    author_name: ZhiyuYANG
+    author_email: zhiyu_yang@sjtu.edu.cn
+    generated_timestamp: 1643095384
