@@ -1,0 +1,46 @@
+{
+    "ac_kwargs":	{
+        "hidden_sizes":	[
+            64,
+            64
+        ]
+    },
+    "actor_critic":	"MLPActorCritic",
+    "clip_ratio":	0.2,
+    "demo_file":	"Hopper100.pickle",
+    "env_fn":	"<function <lambda> at 0x7f444bc5c840>",
+    "epochs":	500,
+    "exp_name":	"AMT_Hopper_Ours_Birch",
+    "gamma":	0.99,
+    "lam":	0.97,
+    "logger":	{
+        "<spinup.utils.logx.EpochLogger object at 0x7f444bcf5390>":	{
+            "epoch_dict":	{},
+            "exp_name":	"AMT_Hopper_Ours_Birch",
+            "first_row":	true,
+            "log_current_row":	{},
+            "log_headers":	[],
+            "output_dir":	"/home/tete/work/new/data/AMT_Hopper_Ours_Birch/AMT_Hopper_Ours_Birch_s28",
+            "output_file":	{
+                "<_io.TextIOWrapper name='/home/tete/work/new/data/AMT_Hopper_Ours_Birch/AMT_Hopper_Ours_Birch_s28/progress.txt' mode='w' encoding='UTF-8'>":	{
+                    "mode":	"w"
+                }
+            }
+        }
+    },
+    "logger_kwargs":	{
+        "exp_name":	"AMT_Hopper_Ours_Birch",
+        "output_dir":	"/home/tete/work/new/data/AMT_Hopper_Ours_Birch/AMT_Hopper_Ours_Birch_s28"
+    },
+    "max_ep_len":	1000,
+    "pi_epochs":	20,
+    "pi_lr":	0.0003,
+    "save_freq":	10,
+    "seed":	28,
+    "steps_per_epoch":	40000,
+    "target_kl":	0.01,
+    "train_pi_iters":	40,
+    "train_v_iters":	40,
+    "vf_epochs":	20,
+    "vf_lr":	0.001
+}

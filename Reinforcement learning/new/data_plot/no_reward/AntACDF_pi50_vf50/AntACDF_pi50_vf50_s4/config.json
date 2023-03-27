@@ -1,0 +1,46 @@
+{
+    "ac_kwargs":	{
+        "hidden_sizes":	[
+            64,
+            64
+        ]
+    },
+    "actor_critic":	"MLPActorCritic",
+    "clip_ratio":	0.2,
+    "env_fn":	"<function <lambda> at 0x7fdf1c773620>",
+    "epochs":	1000,
+    "exp_name":	"AntACDF_pi50_vf50",
+    "gamma":	0.99,
+    "lam":	0.97,
+    "logger":	{
+        "<spinup.utils.logx.EpochLogger object at 0x7fdf1c7dee80>":	{
+            "epoch_dict":	{},
+            "exp_name":	"AntACDF_pi50_vf50",
+            "first_row":	true,
+            "log_current_row":	{},
+            "log_headers":	[],
+            "output_dir":	"/home/tete/work/new/data/AntACDF_pi50_vf50/AntACDF_pi50_vf50_s4",
+            "output_file":	{
+                "<_io.TextIOWrapper name='/home/tete/work/new/data/AntACDF_pi50_vf50/AntACDF_pi50_vf50_s4/progress.txt' mode='w' encoding='UTF-8'>":	{
+                    "mode":	"w"
+                }
+            }
+        }
+    },
+    "logger_kwargs":	{
+        "exp_name":	"AntACDF_pi50_vf50",
+        "output_dir":	"/home/tete/work/new/data/AntACDF_pi50_vf50/AntACDF_pi50_vf50_s4"
+    },
+    "max_ep_len":	1000,
+    "pi_itr":	50,
+    "pi_lr":	0.0003,
+    "pretrain_model":	"data/AntPretrain/AntPretrain_s4/pyt_save/",
+    "save_freq":	10,
+    "seed":	4,
+    "steps_per_epoch":	40000,
+    "target_kl":	0.01,
+    "train_pi_iters":	80,
+    "train_v_iters":	80,
+    "vf_itr":	50,
+    "vf_lr":	0.001
+}

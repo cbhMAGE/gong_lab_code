@@ -1,0 +1,3 @@
+python -m spinup.algos.pytorch.acdf_cuda.acdf  --seed 0 --exp_name Walker2dACDF_pi0_vf0 --pi-itr 0 --vf-itr 0 --epochs 1000 --pretrain-model data/WalkerPretrain/WalkerPretrain_s0/pyt_save/ --cpu 4 --env Walker2d-v2
+python -m spinup.algos.pytorch.acdf_cuda.acdf  --seed 1 --exp_name Walker2dACDF_pi0_vf0 --pi-itr 0 --vf-itr 0 --epochs 1000 --pretrain-model data/WalkerPretrain/WalkerPretrain_s0/pyt_save/ --cpu 4 --env Walker2d-v2
+python -m spinup.algos.pytorch.acdf_cuda.acdf  --seed 2 --exp_name Walker2dACDF_pi0_vf0 --pi-itr 0 --vf-itr 0 --epochs 1000 --pretrain-model data/WalkerPretrain/WalkerPretrain_s0/pyt_save/ --cpu 4 --env Walker2d-v2

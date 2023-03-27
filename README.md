@@ -26,4 +26,8 @@ Waiting for the code to upload.
 
 ## Reinforcement learning
 
-Waiting for the code to upload.
+This document mainly includes reinforcement learning simulation platform environment and training algorithm.
+
+Documentation documenting detailed code functionality is being written.
+
+> Last Modified: 2023/3/27
