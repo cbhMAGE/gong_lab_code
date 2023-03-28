@@ -1,0 +1,8 @@
+(cl:in-package perception_neuron_one_topic_version-msg)
+(cl:export '(HEADER-VAL
+          HEADER
+          STATUS-VAL
+          STATUS
+          RESULT-VAL
+          RESULT
+))

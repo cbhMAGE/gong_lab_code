@@ -20,7 +20,9 @@ This document mainly contains the code for autonomous planning and grasping usin
 
 ## Natural teaching
 
-Waiting for the code to upload.
+This document mainly contains the code and hardware of the natural teaching part of the robot. It mainly includes the teleoperation project data of InMooV robot and JAKA robot arm.
+
+> Last Modified: 2023/3/28
 
 
 

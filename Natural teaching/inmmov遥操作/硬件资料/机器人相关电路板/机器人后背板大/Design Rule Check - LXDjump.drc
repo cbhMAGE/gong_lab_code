@@ -1,0 +1,66 @@
+Protel Design System Design Rule Check
+PCB File : E:\桌面\机器人相关电路板\机器人后背板大\LXDjump.PcbDoc
+Date     : 2017/8/24
+Time     : 17:28:23
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Silk primitive without silk layer
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=10mil) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=10mil) (Disabled)(IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=150mil) (Disabled)(All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=20mil) (Max=150mil) (Preferred=20mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Track (944.883mil,-3803.149mil)(944.883mil,-3331.849mil)  Bottom Layer
+   Violation between Un-Routed Net Constraint: Net NewNet1 Between Track on layer Top Layer (995.711,-3964.919mil) And Pad TTL-485-3-1 (6831.497,-3905.509mil)
+   Violation between Un-Routed Net Constraint: Net V6 Between Track on layer Top Layer (1456.693,-6771.653mil) And Pad -1 (1617.716,-6697.205mil)
+   Violation between Un-Routed Net Constraint: Net V6 Between Track on layer Top Layer (2007.874,-6811.023mil) And Track on layer Bottom Layer (2208.269,-6697.205mil)
+   Violation between Un-Routed Net Constraint: 
+   Violation between Un-Routed Net Constraint: Net V6 Between Pad BLX1-1 (-521.652,-7766.259mil) And Pad BLX1-2 (-521.652,-6900.117mil)
+   Violation between Un-Routed Net Constraint: Net V6 Between Track on layer Top Layer (1205.71,-7766.259mil) And Track on layer Bottom Layer (1205.71,-6900.117mil)
+   Violation between Un-Routed Net Constraint: Net V6 Between Track on layer Top Layer (164.524,-5662.245mil) And Track on layer Top Layer (925.197,-5507.439mil)
+   Violation between Un-Routed Net Constraint: Net GND Between Track on layer Top Layer (2384.684,-1591.693mil) And Track on layer Top Layer (2433.465,-1129.527mil)
+   Violation between Un-Routed Net Constraint: Net V12 Between Track on layer Top Layer (3188.977,-6771.653mil) And Track on layer Bottom Layer (3349.999,-6697.205mil)
+   Violation between Un-Routed Net Constraint: Net V12 Between Track on layer Top Layer (275.591,-6811.023mil) And Track on layer Bottom Layer (475.985,-6697.205mil)
+   Violation between Un-Routed Net Constraint: 
+   Violation between Un-Routed Net Constraint: Net V12 Between Track on layer Bottom Layer (3508.858,-7766.259mil) And Track on layer Bottom Layer (4015.749,-7755.906mil)
+   Violation between Un-Routed Net Constraint: 
+   Violation between Un-Routed Net Constraint: 
+   Violation between Un-Routed Net Constraint: Net V12 Between Track on layer Top Layer (2619.055,-5215.591mil) And Pad -1 (2798.818,-6697.205mil)
+Rule Violations :16
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+
+Violations Detected : 16
+Time Elapsed        : 00:00:02

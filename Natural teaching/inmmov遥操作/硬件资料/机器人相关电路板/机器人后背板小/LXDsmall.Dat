@@ -1,0 +1,13 @@
+﻿Field=Comment~String~Comment~100|Field=Description~String~Description~100|Field=Designator~String~Designator~100|Field=Footprint~String~Footprint~100|Field=LibRef~String~LibRef~100|Field=Quantity~Integer~Quantity~100|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~Free Documents|ReportField=ProjectFullPath~Free Documents|ReportField=Title~Bill of Materials For PCB Document [LXDsmall.PcbDoc]|ReportField=TotalQuantity~71|ReportField=ReportTime~18:04:41|ReportField=ReportDate~2017/9/3|ReportField=ReportDateTime~2017/9/3 18:04:41|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=DataSourceFileName~LXDsmall.PcbDoc|ReportField=DataSourceFullPath~E:\桌面\机器人相关电路板\机器人后背板小\LXDsmall.PcbDoc
+Comment|||06030||4
+Comment|||AXIAL-0.4||8
+Comment|||C_50V_10u||8
+Comment|||LED_BLUE||8
+Comment|||switch||1
+Comment||6V-2, 6V-3, 6V-4, 6V-5, 6V-6, 6V-7, 6V-8, 12V-2, 12V-3, 12V-4, 12V-5|HEADER 1X2a||11
+Comment||Arduino Mega|arduino_pin||1
+Comment||BLX1, BLX2, BLX3, BLX4, BLX5, BLX6, BLX7, BLX8|BLX-A||8
+Comment||Micro_SD|Micro_SD||1
+Comment||Nano1, Nano2|NANO||2
+Comment||TTL-485-1, TTL-485-2, TTL-485-3|ttl-485||3
+Comment||[NoValue], [NoValue], [NoValue], [NoValue], [NoValue], [NoValue], [NoValue], [NoValue], [NoValue], [NoValue], [NoValue], [NoValue], MOTOR1, MOTOR1, MOTOR8, MOTOR8|HDR1X3||16

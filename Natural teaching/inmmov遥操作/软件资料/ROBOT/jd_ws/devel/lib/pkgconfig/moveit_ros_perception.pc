@@ -1,0 +1,8 @@
+prefix=/home/pn/jd_ws/devel
+
+Name: moveit_ros_perception
+Description: Description of moveit_ros_perception
+Version: 0.7.12
+Cflags: -I/home/pn/jd_ws/src/moveit/moveit_ros/perception/mesh_filter/include -I/home/pn/jd_ws/src/moveit/moveit_ros/perception/lazy_free_space_updater/include -I/home/pn/jd_ws/src/moveit/moveit_ros/perception/depth_image_octomap_updater/include -I/home/pn/jd_ws/src/moveit/moveit_ros/perception/point_containment_filter/include -I/home/pn/jd_ws/src/moveit/moveit_ros/perception/occupancy_map_monitor/include -I/home/pn/jd_ws/src/moveit/moveit_ros/perception/pointcloud_octomap_updater/include -I/home/pn/jd_ws/src/moveit/moveit_ros/perception/semantic_world/include -I/opt/ros/indigo/include
+Libs: -L/home/pn/jd_ws/devel/lib -lmoveit_lazy_free_space_updater -lmoveit_point_containment_filter -lmoveit_occupancy_map_monitor -lmoveit_pointcloud_octomap_updater_core -lmoveit_semantic_world -l:/opt/ros/indigo/lib/liboctomap.so -l:/opt/ros/indigo/lib/liboctomath.so
+Requires: moveit_core image_transport moveit_msgs

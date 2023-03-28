@@ -1,0 +1,8 @@
+prefix=/home/pn/jd_ws/devel
+
+Name: inmoov_tracker
+Description: Description of inmoov_tracker
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/pn/jd_ws/devel/lib 
+Requires: 

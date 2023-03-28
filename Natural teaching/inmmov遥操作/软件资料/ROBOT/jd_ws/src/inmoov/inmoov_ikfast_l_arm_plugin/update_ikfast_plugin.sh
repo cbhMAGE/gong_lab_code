@@ -1,0 +1,1 @@
+rosrun moveit_ikfast create_ikfast_moveit_plugin.py inmoov l_arm inmoov_ikfast_l_arm_plugin /home/tom/tutorial/src/inmoov/inmoov_ikfast_l_arm_plugin/src/inmoov_l_arm_ikfast_solver.cpp

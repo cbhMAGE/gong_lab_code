@@ -1,0 +1,8 @@
+prefix=/home/pn/openpose_ws/install
+
+Name: openpose
+Description: Description of openpose
+Version: 0.0.0
+Cflags: -I/home/pn/openpose_ws/install/include
+Libs: -L/home/pn/openpose_ws/install/lib 
+Requires: 

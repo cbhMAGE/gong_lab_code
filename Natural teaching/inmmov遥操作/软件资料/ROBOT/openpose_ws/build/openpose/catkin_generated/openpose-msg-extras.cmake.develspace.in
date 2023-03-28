@@ -1,0 +1,2 @@
+set(openpose_MESSAGE_FILES "/home/pn/openpose_ws/devel/share/openpose/msg/anglegoalAction.msg;/home/pn/openpose_ws/devel/share/openpose/msg/anglegoalActionGoal.msg;/home/pn/openpose_ws/devel/share/openpose/msg/anglegoalActionResult.msg;/home/pn/openpose_ws/devel/share/openpose/msg/anglegoalActionFeedback.msg;/home/pn/openpose_ws/devel/share/openpose/msg/anglegoalGoal.msg;/home/pn/openpose_ws/devel/share/openpose/msg/anglegoalResult.msg;/home/pn/openpose_ws/devel/share/openpose/msg/anglegoalFeedback.msg")
+set(openpose_SERVICE_FILES "")

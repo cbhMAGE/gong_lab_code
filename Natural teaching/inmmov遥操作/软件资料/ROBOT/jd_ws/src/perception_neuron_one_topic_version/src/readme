@@ -1,0 +1,6 @@
+joint.py defines a joint class
+link.h defines a link class
+motion_config.txt and motion_config.py defines a class to set all servos' motion range
+ 
+perceptionserial sender defines a class to create a subscriber to receive data (from BVH node) and do data transformation
+perception_serial is the real main file to create the subscriber and send data to arduino

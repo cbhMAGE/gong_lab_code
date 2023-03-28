@@ -1,0 +1,8 @@
+prefix=/home/pn/jd_ws/install
+
+Name: moveit_commander
+Description: Description of moveit_commander
+Version: 0.7.12
+Cflags: 
+Libs: -L/home/pn/jd_ws/install/lib 
+Requires: 

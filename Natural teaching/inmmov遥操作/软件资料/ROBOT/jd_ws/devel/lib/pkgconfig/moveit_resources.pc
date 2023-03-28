@@ -1,0 +1,8 @@
+prefix=/home/pn/jd_ws/devel
+
+Name: moveit_resources
+Description: Description of moveit_resources
+Version: 0.6.2
+Cflags: -I/home/pn/jd_ws/src/moveit_resources/include -I/home/pn/jd_ws/devel/include
+Libs: -L/home/pn/jd_ws/devel/lib 
+Requires: 

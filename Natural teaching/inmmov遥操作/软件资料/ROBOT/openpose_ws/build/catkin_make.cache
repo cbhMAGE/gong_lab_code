@@ -1,0 +1,2 @@
+openpose
+-DCATKIN_DEVEL_PREFIX=/home/pn/openpose_ws/devel -DCMAKE_INSTALL_PREFIX=/home/pn/openpose_ws/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/pn/jd_ws/devel
+
+Name: moveit_setup_assistant
+Description: Description of moveit_setup_assistant
+Version: 0.7.12
+Cflags: -I/home/pn/jd_ws/src/moveit/moveit_setup_assistant/include
+Libs: -L/home/pn/jd_ws/devel/lib -lmoveit_setup_assistant_tools
+Requires: moveit_ros_planning moveit_ros_visualization

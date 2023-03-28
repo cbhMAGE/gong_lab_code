@@ -1,0 +1,8 @@
+prefix=/home/pn/jd_ws/install
+
+Name: rosserial_client
+Description: Description of rosserial_client
+Version: 0.6.4
+Cflags: 
+Libs: -L/home/pn/jd_ws/install/lib 
+Requires: 

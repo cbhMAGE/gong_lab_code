@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find inmoov_moveit_config)/launch/demo.launch"/>
+
+  <node name="arm_tracker" pkg="inmoov_tracker" type="inmoov_tracker.py" respawn="false" output="screen">
+  </node>
+
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/pn/jd_ws/devel
+
+Name: perception_neuron_one_topic_version
+Description: Description of perception_neuron_one_topic_version
+Version: 0.0.0
+Cflags: -I/home/pn/jd_ws/devel/include
+Libs: -L/home/pn/jd_ws/devel/lib 
+Requires: 

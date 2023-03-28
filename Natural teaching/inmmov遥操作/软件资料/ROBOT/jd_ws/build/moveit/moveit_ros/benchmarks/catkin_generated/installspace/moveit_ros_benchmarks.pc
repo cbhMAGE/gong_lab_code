@@ -1,0 +1,8 @@
+prefix=/home/pn/jd_ws/install
+
+Name: moveit_ros_benchmarks
+Description: Description of moveit_ros_benchmarks
+Version: 0.7.12
+Cflags: -I/home/pn/jd_ws/install/include
+Libs: -L/home/pn/jd_ws/install/lib -lmoveit_benchmark_execution
+Requires: moveit_ros_planning moveit_ros_warehouse

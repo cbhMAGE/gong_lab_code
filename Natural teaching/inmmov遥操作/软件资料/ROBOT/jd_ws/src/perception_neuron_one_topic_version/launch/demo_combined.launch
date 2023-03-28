@@ -1,0 +1,11 @@
+<launch>
+
+<node name="perception_neuron_one_topic_talk_node" pkg="perception_neuron_one_topic_version" type="perception_neuron_one_topic_talk_node" output="screen" required="true">
+</node>
+<node name="socket_node" pkg="rosserial_server" type="socket_node">
+</node>
+<node name="perception_neuron_one_topic_serial_node" pkg="perception_neuron_one_topic_version" type="perception_neuron_one_topic_serial_node" output="screen">
+</node>
+
+
+</launch>

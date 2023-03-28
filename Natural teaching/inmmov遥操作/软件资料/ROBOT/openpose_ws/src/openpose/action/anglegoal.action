@@ -1,0 +1,11 @@
+#Define the goal 
+sensor_msgs/JointState jointstate
+
+---
+#Define the result
+bool result
+
+---
+#Define the feedback
+
+sensor_msgs/JointState error

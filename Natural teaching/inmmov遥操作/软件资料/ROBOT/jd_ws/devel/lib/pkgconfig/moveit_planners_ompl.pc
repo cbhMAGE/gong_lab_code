@@ -1,0 +1,8 @@
+prefix=/home/pn/jd_ws/devel
+
+Name: moveit_planners_ompl
+Description: Description of moveit_planners_ompl
+Version: 0.7.12
+Cflags: -I/home/pn/jd_ws/devel/include -I/home/pn/jd_ws/src/moveit/moveit_planners/ompl/ompl_interface/include -I/opt/ros/indigo/include
+Libs: -L/home/pn/jd_ws/devel/lib -lmoveit_ompl_interface -l:/opt/ros/indigo/lib/x86_64-linux-gnu/libompl.so
+Requires: moveit_core

@@ -1,0 +1,23 @@
+<launch>
+
+   <!-- Bring up the arbotix driver with a configuration file appropriate to the robot -->
+   <node name="perception_serial" pkg="perception_neuron_one_topic_version" type="perception_serial.py" output="screen">
+      <rosparam command="load" file="$(find perception_neuron_one_topic_version)/launch/demo.yaml" />
+      <rosparam command="load" file="$(find perception_neuron_one_topic_version)/launch/serialport.yaml" />
+   </node>
+
+   <node name="socket_node" pkg="rosserial_server" type="socket_node" output="screen">
+   </node>
+
+   <node name="check_collision_code" pkg="perception_neuron_one_topic_version" type="collision_check_node" output="screen">
+   
+   </node>
+
+   <node name="talk_node" pkg="perception_neuron_one_topic_version" type="perception_neuron_one_topic_talk_node" output="screen">
+   </node>
+   <rosparam command="load" file="$(find perception_neuron_one_topic_version)/launch/linktalk.yaml" />
+   <rosparam command="load" file="$(find perception_neuron_one_topic_version)/launch/linkcalculate.yaml" />
+   
+  <include file="$(find inmoov_description)/display _collision.launch">
+  </include>
+</launch>

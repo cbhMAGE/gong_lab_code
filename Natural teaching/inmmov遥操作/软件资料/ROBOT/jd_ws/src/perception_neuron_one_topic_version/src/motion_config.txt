@@ -1,0 +1,140 @@
+#left_hand part  0-6---------------------
+
+left_thumb:
+	min= -5
+	max= 5 
+left_thumb;
+
+left_ index:
+	min= -91.7
+	max= -10
+left_index;
+
+left_middle:
+	min=-57.29
+	max=-10
+left_middle;
+
+left_ring:
+	min=-65.89
+	max=-10
+left_ring;
+
+left_pinky:
+	min=-74
+	max=-10
+left_pinky;
+
+left_hand:
+	min=-85
+	max=80
+left_hand;
+
+#left_arm part    7-10----------------------
+
+left_bicep:
+	min=-75
+	max=-20
+left_bicep;
+
+left_bicep_rotate:
+	min=-30
+	max=30
+left_bicep_rotate;
+
+left_shoulder_side:
+	min=-70
+	max=0
+left_shoulder_side;
+
+left_shoulder_up:
+	min=-70
+	max=20
+left_shoulder_up;
+
+#head part    11,12---------------------------
+head_leftright:
+	min=-35
+	max=35
+head_leftright;
+
+head_updown:
+	min=-34
+	max=0
+head_updown;
+
+#right_arm part 13-16--------------------------
+right_bicep:
+	min=-91.7
+	max=-9
+right_bicep;
+
+right_bicep_rotate:
+	min=-68.75
+	max=34.38
+right_bicep_rotate;
+
+right_shoulder_side:
+	min=5
+	max=70
+right_shoulder_side;
+
+right_shoulder_up:
+	min=-30
+	max=80
+right_shoulder_up;
+
+#right_hand part  17-22-------------------------
+
+right_thumb:
+	min=-15
+	max=15
+right_thumb;
+
+right_index:
+	min=10
+	max=91.7
+right_index;
+
+right_middle:
+	min=10
+	max=57.29
+right_middle;
+
+right_ring:
+	min=10
+	max=65
+right_ring;
+
+right_pinky:
+	min=10
+	max=74
+right_pinky;
+
+right_hand:
+	min=-85
+	max=80
+right_hand;
+
+#waist part  23-25------------------------------
+waist_rotate:
+	min=-70
+	max=70
+waist_rotate;
+	
+waist_lean:
+	min=-30
+	max=30
+waist_lean;
+
+waist_front:
+	min=255
+	max=256
+waist_front;
+
+#jaw extra part 26-----------------------------
+jaw:
+	min=0
+	max=30
+jaw;
+

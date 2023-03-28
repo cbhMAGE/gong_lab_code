@@ -1,0 +1,8 @@
+prefix=/home/pn/jd_ws/devel
+
+Name: inmoov_planning
+Description: Description of inmoov_planning
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/pn/jd_ws/devel/lib 
+Requires: 

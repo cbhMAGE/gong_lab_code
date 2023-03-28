@@ -1,0 +1,8 @@
+prefix=/home/pn/jd_ws/install
+
+Name: inmoov_move
+Description: Description of inmoov_move
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/pn/jd_ws/install/lib 
+Requires: 

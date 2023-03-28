@@ -1,0 +1,8 @@
+prefix=/home/pn/jd_ws/devel
+
+Name: moveit_planners_chomp
+Description: Description of moveit_planners_chomp
+Version: 0.7.12
+Cflags: -I/home/pn/jd_ws/src/moveit/moveit_planners/chomp/chomp_interface/include
+Libs: -L/home/pn/jd_ws/devel/lib -lmoveit_planners_chomp
+Requires: roscpp moveit_core pluginlib

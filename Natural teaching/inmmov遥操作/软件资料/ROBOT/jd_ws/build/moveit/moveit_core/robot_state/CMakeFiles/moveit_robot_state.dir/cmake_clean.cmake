@@ -1,0 +1,13 @@
+FILE(REMOVE_RECURSE
+  "CMakeFiles/moveit_robot_state.dir/src/attached_body.cpp.o"
+  "CMakeFiles/moveit_robot_state.dir/src/conversions.cpp.o"
+  "CMakeFiles/moveit_robot_state.dir/src/robot_state.cpp.o"
+  "/home/pn/jd_ws/devel/lib/libmoveit_robot_state.pdb"
+  "/home/pn/jd_ws/devel/lib/libmoveit_robot_state.so"
+  "/home/pn/jd_ws/devel/lib/libmoveit_robot_state.so.0.7.3"
+)
+
+# Per-language clean rules from dependency scanning.
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/moveit_robot_state.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

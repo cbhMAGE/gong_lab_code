@@ -1,0 +1,5 @@
+execute_process(COMMAND "/home/pn/jd_ws/build/rosserial-indigo-devel/rosserial-indigo-devel/rosserial_xbee/catkin_generated/python_distutils_install.sh" RESULT_VARIABLE res)
+
+if(NOT res EQUAL 0)
+  message(FATAL_ERROR "execute_process(/home/pn/jd_ws/build/rosserial-indigo-devel/rosserial-indigo-devel/rosserial_xbee/catkin_generated/python_distutils_install.sh) returned error code ")
+endif()

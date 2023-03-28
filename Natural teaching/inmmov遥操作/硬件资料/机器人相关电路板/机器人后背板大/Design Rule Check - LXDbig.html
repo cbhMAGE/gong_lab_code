@@ -1,0 +1,374 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://d:\Users\Public\Documents\Altium\AD15\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2017/8/24</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">17:23:04</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///E:\%E6%A1%8C%E9%9D%A2\%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9B%B8%E5%85%B3%E7%94%B5%E8%B7%AF%E6%9D%BF\%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%90%8E%E8%83%8C%E6%9D%BF%E5%A4%A7\LXDbig.PcbDoc" class="file"><acronym title="E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc">E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">14</td></tr>
+</table>
+</td>
+</table><a name="IDHBI5FOWKLHQ5CVTDZYMKRCYXFMCQRJ0ZHMTNZAJJJFMVOPWOVKJM"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVGNRIS241VXGBGI1EAVEL2KAGECQRCBL1ZXCPOGQGCBD55HFVZOK">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXQ0HY1KSNRIPCMWYWTYDRBL3SCZG5EODKHO50XMC5JLXJL5TAHF">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSI50D4YDGL4VFMUCWB00QCRSVE0O2SXU5CMZSIPMAPPOZT0W0ZZI">Silk primitive without silk layer</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRFOGM5H2DPJ3H2BPBVJYH0KA3I3AUMPEOFOSOQBTRZXDO3UPM5DB">Silk to Silk (Clearance=10mil) (Disabled)(All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKFPJGQ4IVF3NDRJR5XFXLDXONOEYFRZ5UODIICFWGER4C4WOQ2LO">Silk To Solder Mask (Clearance=10mil) (Disabled)(IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYGYDEHAVJ2HZFWKW3BPMK30YMMABSCMYFXF4TSLOC2DKJR0IW01E">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXIXQAJDFVDGZI2C5LQBSDOO5YBE3MJC0KYVMBXE3HNAI04VROAJF">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1VJ1LV1FX0GYMTW3OEIZEYZ5KCOB1HOPOJ1CDEJZZGSN22ZMMVIB">Hole Size Constraint (Min=1mil) (Max=150mil) (Disabled)(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOHSR5V2L5XW2EX1NFAYL5XLX0BSO1Z3VNNDJNWG3LHALA2K0POHF">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVWMEBQOEU0OKNCHCBH3JJNXI5P352XDU3RNBOXNDAEQIILLUD5XG">Width Constraint (Min=20mil) (Max=150mil) (Preferred=20mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYA0JBCHD3BUUJDIN3G0AMH2XFCA2XE0LYLCJKDNIWBPRWTPRPVDM">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5GPNQU3Q2DJEGFZOUZSB14RXNZXMWGNUISWFFIYFWMKHMGENBK">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDMQ0Z11RT5JT0PPT2ZQIZ544YIKTED0SFYMOW4VVRFV4JLPZE50">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">14</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDN4UWUWYRY3IUEVB0TVXTPETL0KN0BF2XWXO2SQIL3GJ2NANV0EGD">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">14</td>
+</tr>
+</table><br><a name="IDMQ0Z11RT5JT0PPT2ZQIZ544YIKTED0SFYMOW4VVRFV4JLPZE50"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\%E6%A1%8C%E9%9D%A2\%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9B%B8%E5%85%B3%E7%94%B5%E8%B7%AF%E6%9D%BF\%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%90%8E%E8%83%8C%E6%9D%BF%E5%A4%A7\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11254.724mil|Location2.X=11615.748mil|Location1.Y=4835.394mil|Location2.Y=5109.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11254.724mil|Location2.X=11615.748mil|Location1.Y=4835.394mil|Location2.Y=5109.842mil|Absolute=True">Un-Routed Net Constraint: Net V6 Between Track on layer Top Layer (1456.693,-6771.653mil) And Pad -1 (1617.716,-6697.205mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\%E6%A1%8C%E9%9D%A2\%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9B%B8%E5%85%B3%E7%94%B5%E8%B7%AF%E6%9D%BF\%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%90%8E%E8%83%8C%E6%9D%BF%E5%A4%A7\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11805.906mil|Location2.X=12206.3mil|Location1.Y=4796.024mil|Location2.Y=5109.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11805.906mil|Location2.X=12206.3mil|Location1.Y=4796.024mil|Location2.Y=5109.842mil|Absolute=True">Un-Routed Net Constraint: Net V6 Between Track on layer Top Layer (2007.874,-6811.023mil) And Track on layer Bottom Layer (2208.269,-6697.205mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\%E6%A1%8C%E9%9D%A2\%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9B%B8%E5%85%B3%E7%94%B5%E8%B7%AF%E6%9D%BF\%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%90%8E%E8%83%8C%E6%9D%BF%E5%A4%A7\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11398.12mil|Location2.X=11682.742mil|Location1.Y=2579.498mil|Location2.Y=3283.426mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11398.12mil|Location2.X=11682.742mil|Location1.Y=2579.498mil|Location2.Y=3283.426mil|Absolute=True">Un-Routed Net Constraint: </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\%E6%A1%8C%E9%9D%A2\%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9B%B8%E5%85%B3%E7%94%B5%E8%B7%AF%E6%9D%BF\%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%90%8E%E8%83%8C%E6%9D%BF%E5%A4%A7\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9333.01mil|Location2.X=9419.75mil|Location1.Y=3907.26mil|Location2.Y=4840.458mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9333.01mil|Location2.X=9419.75mil|Location1.Y=3907.26mil|Location2.Y=4840.458mil|Absolute=True">Un-Routed Net Constraint: Net V6 Between Pad BLX1-1 (-521.652,-7766.259mil) And Pad BLX1-2 (-521.652,-6900.117mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\%E6%A1%8C%E9%9D%A2\%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9B%B8%E5%85%B3%E7%94%B5%E8%B7%AF%E6%9D%BF\%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%90%8E%E8%83%8C%E6%9D%BF%E5%A4%A7\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11003.742mil|Location2.X=11203.742mil|Location1.Y=3840.788mil|Location2.Y=4906.93mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11003.742mil|Location2.X=11203.742mil|Location1.Y=3840.788mil|Location2.Y=4906.93mil|Absolute=True">Un-Routed Net Constraint: Net V6 Between Track on layer Top Layer (1205.71,-7766.259mil) And Track on layer Bottom Layer (1205.71,-6900.117mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\%E6%A1%8C%E9%9D%A2\%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9B%B8%E5%85%B3%E7%94%B5%E8%B7%AF%E6%9D%BF\%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%90%8E%E8%83%8C%E6%9D%BF%E5%A4%A7\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9962.556mil|Location2.X=10923.228mil|Location1.Y=5944.802mil|Location2.Y=6299.608mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9962.556mil|Location2.X=10923.228mil|Location1.Y=5944.802mil|Location2.Y=6299.608mil|Absolute=True">Un-Routed Net Constraint: Net V6 Between Track on layer Top Layer (164.524,-5662.245mil) And Track on layer Top Layer (925.197,-5507.439mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\%E6%A1%8C%E9%9D%A2\%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9B%B8%E5%85%B3%E7%94%B5%E8%B7%AF%E6%9D%BF\%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%90%8E%E8%83%8C%E6%9D%BF%E5%A4%A7\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12182.716mil|Location2.X=12431.496mil|Location1.Y=10015.354mil|Location2.Y=10677.52mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12182.716mil|Location2.X=12431.496mil|Location1.Y=10015.354mil|Location2.Y=10677.52mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track on layer Top Layer (2384.684,-1591.693mil) And Track on layer Top Layer (2433.465,-1129.527mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\%E6%A1%8C%E9%9D%A2\%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9B%B8%E5%85%B3%E7%94%B5%E8%B7%AF%E6%9D%BF\%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%90%8E%E8%83%8C%E6%9D%BF%E5%A4%A7\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12987.008mil|Location2.X=13348.03mil|Location1.Y=4835.394mil|Location2.Y=5109.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12987.008mil|Location2.X=13348.03mil|Location1.Y=4835.394mil|Location2.Y=5109.842mil|Absolute=True">Un-Routed Net Constraint: Net V12 Between Track on layer Top Layer (3188.977,-6771.653mil) And Track on layer Bottom Layer (3349.999,-6697.205mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\%E6%A1%8C%E9%9D%A2\%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9B%B8%E5%85%B3%E7%94%B5%E8%B7%AF%E6%9D%BF\%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%90%8E%E8%83%8C%E6%9D%BF%E5%A4%A7\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10073.622mil|Location2.X=10474.016mil|Location1.Y=4796.024mil|Location2.Y=5109.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10073.622mil|Location2.X=10474.016mil|Location1.Y=4796.024mil|Location2.Y=5109.842mil|Absolute=True">Un-Routed Net Constraint: Net V12 Between Track on layer Top Layer (275.591,-6811.023mil) And Track on layer Bottom Layer (475.985,-6697.205mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\%E6%A1%8C%E9%9D%A2\%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9B%B8%E5%85%B3%E7%94%B5%E8%B7%AF%E6%9D%BF\%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%90%8E%E8%83%8C%E6%9D%BF%E5%A4%A7\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14796.416mil|Location2.X=15361.852mil|Location1.Y=2906.14mil|Location2.Y=3106.14mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14796.416mil|Location2.X=15361.852mil|Location1.Y=2906.14mil|Location2.Y=3106.14mil|Absolute=True">Un-Routed Net Constraint: </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\%E6%A1%8C%E9%9D%A2\%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9B%B8%E5%85%B3%E7%94%B5%E8%B7%AF%E6%9D%BF\%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%90%8E%E8%83%8C%E6%9D%BF%E5%A4%A7\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13306.89mil|Location2.X=14013.78mil|Location1.Y=3840.788mil|Location2.Y=4051.141mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13306.89mil|Location2.X=14013.78mil|Location1.Y=3840.788mil|Location2.Y=4051.141mil|Absolute=True">Un-Routed Net Constraint: Net V12 Between Track on layer Bottom Layer (3508.858,-7766.259mil) And Track on layer Bottom Layer (4015.749,-7755.906mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\%E6%A1%8C%E9%9D%A2\%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9B%B8%E5%85%B3%E7%94%B5%E8%B7%AF%E6%9D%BF\%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%90%8E%E8%83%8C%E6%9D%BF%E5%A4%A7\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10459.945mil|Location2.X=10665.352mil|Location1.Y=4679.375mil|Location2.Y=4062.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10459.945mil|Location2.X=10665.352mil|Location1.Y=4679.375mil|Location2.Y=4062.937mil|Absolute=True">Un-Routed Net Constraint: </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\%E6%A1%8C%E9%9D%A2\%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9B%B8%E5%85%B3%E7%94%B5%E8%B7%AF%E6%9D%BF\%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%90%8E%E8%83%8C%E6%9D%BF%E5%A4%A7\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10301.269mil|Location2.X=10703.54mil|Location1.Y=2679.498mil|Location2.Y=3214.985mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10301.269mil|Location2.X=10703.54mil|Location1.Y=2679.498mil|Location2.Y=3214.985mil|Absolute=True">Un-Routed Net Constraint: </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\%E6%A1%8C%E9%9D%A2\%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9B%B8%E5%85%B3%E7%94%B5%E8%B7%AF%E6%9D%BF\%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%90%8E%E8%83%8C%E6%9D%BF%E5%A4%A7\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12417.086mil|Location2.X=12796.85mil|Location1.Y=6391.456mil|Location2.Y=5109.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\桌面\机器人相关电路板\机器人后背板大\LXDbig.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12417.086mil|Location2.X=12796.85mil|Location1.Y=6391.456mil|Location2.Y=5109.842mil|Absolute=True">Un-Routed Net Constraint: Net V12 Between Track on layer Top Layer (2619.055,-5215.591mil) And Pad -1 (2798.818,-6697.205mil)</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

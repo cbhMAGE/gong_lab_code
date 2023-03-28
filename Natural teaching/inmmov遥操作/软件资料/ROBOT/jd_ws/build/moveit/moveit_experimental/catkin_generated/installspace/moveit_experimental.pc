@@ -1,0 +1,8 @@
+prefix=/home/pn/jd_ws/install
+
+Name: moveit_experimental
+Description: Description of moveit_experimental
+Version: 0.7.12
+Cflags: -I/home/pn/jd_ws/install/include -I/opt/ros/indigo/include -I/usr/include -I/usr/include/eigen3
+Libs: -L/home/pn/jd_ws/install/lib -lmoveit_collision_distance_field -lcollision_detector_hybrid_plugin -l:/opt/ros/indigo/lib/liboctomap.so -l:/opt/ros/indigo/lib/liboctomath.so -l:/usr/lib/x86_64-linux-gnu/libboost_system.so -l:/usr/lib/x86_64-linux-gnu/libboost_filesystem.so -l:/usr/lib/x86_64-linux-gnu/libboost_date_time.so -l:/usr/lib/x86_64-linux-gnu/libboost_thread.so -l:/usr/lib/x86_64-linux-gnu/libboost_iostreams.so -l:/usr/lib/x86_64-linux-gnu/libpthread.so -l:/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so -l:/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so -l:/usr/lib/x86_64-linux-gnu/liburdfdom_model.so -l:/usr/lib/x86_64-linux-gnu/liburdfdom_world.so -l:/usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+Requires: moveit_core geometric_shapes shape_tools eigen_stl_containers eigen_conversions moveit_msgs kdl_parser pluginlib

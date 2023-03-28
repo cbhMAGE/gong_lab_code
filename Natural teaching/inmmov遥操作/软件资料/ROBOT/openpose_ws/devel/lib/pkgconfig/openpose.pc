@@ -1,0 +1,8 @@
+prefix=/home/pn/openpose_ws/devel
+
+Name: openpose
+Description: Description of openpose
+Version: 0.0.0
+Cflags: -I/home/pn/openpose_ws/devel/include
+Libs: -L/home/pn/openpose_ws/devel/lib 
+Requires: 

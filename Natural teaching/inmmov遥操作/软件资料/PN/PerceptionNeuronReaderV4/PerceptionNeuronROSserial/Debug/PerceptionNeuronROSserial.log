@@ -1,0 +1,7 @@
+﻿  PerceptionNeuronROSserial.cpp
+c:\users\administrator\desktop\perceptionneuronreaderv4\perceptionneuronrosserial\perceptionneuronrosserial.cpp(332): warning C4244: “参数”: 从“double”转换到“DWORD”，可能丢失数据
+c:\users\administrator\desktop\perceptionneuronreaderv4\perceptionneuronrosserial\perceptionneuronrosserial.cpp(231): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 参见“strcpy”的声明
+c:\users\administrator\desktop\perceptionneuronreaderv4\perceptionneuronrosserial\perceptionneuronrosserial.cpp(248): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 参见“strcpy”的声明
+  PerceptionNeuronROSserial.vcxproj -> C:\Users\Administrator\Desktop\PerceptionNeuronReaderV4\Debug\PerceptionNeuronROSserial.exe
