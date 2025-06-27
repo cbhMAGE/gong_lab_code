@@ -10,7 +10,11 @@
 
 [💻 Framewrok](#-Framewrok)
 
-[⚙️ Hardware_Requirement](#️-Hardware_Requirement)
+[⚙️ Requirement](#️-Requirement)
+
+[🛠️ Installation](#️-Installation)
+
+[🚀 Quickly_Start](#-Quickly_Start)
 
 ## Autonomous picking
 
