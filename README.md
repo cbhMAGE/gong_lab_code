@@ -1,14 +1,13 @@
-# gong_lab_code
+# agri_robot_25
 
-This document stores the relevant code of the lab.
+> Last Modified: 2025/5/22
+> system: Ubuntu 22.04, ROS.
 
-Mainly divided into the following three parts.
-
-- Autonomous picking
-- Natural teaching
-- Reinforcement learning
-
-
+## Menu
+[📖 Menu](#-Menu)
+[📝 Introduction](#-Introduction)
+[💻 Framewrok](#-Framewrok)
+[⚙️ Hardware Requirement](#️-Hardware Requirement)
 
 ## Autonomous picking
 
